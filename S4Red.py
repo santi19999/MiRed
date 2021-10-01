@@ -38,9 +38,15 @@ def obtener_pais():
 
 def obtener_lista_amigos():
     linea = input("Muy bien. Finalmente, escribe una lista con los nombres de tus amigos, separados por una ',': ")
-    amigos = linea.split(",")
+    amigos = linea.split(",") #Inserta en una lista , los amigos que el usuario ingresa 
     return amigos
 
+def agregar_amigos(amix):
+    auxiliar = input("Escribe una lista con los nuevos amigos que quieres agregar separados por una ',' : ")
+    nueva_lista = auxiliar.split(",")
+    for aux in nueva_lista:
+        amix.append(aux)
+    return amix
 
 def mostrar_perfil(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos):
     print("--------------------------------------------------")
@@ -49,7 +55,7 @@ def mostrar_perfil(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos):
     print("Estatura: ", estatura_m, "m y ", estatura_cm, "centímetros")
     print("Sexo:     ", sexo)
     print("País:     ", pais)
-    print("Amigos:   ", len(amigos))
+    print("Amigos:   ", len(amigos))  #cuenta la cantidad de elementos que tiene la lista con la funcion len
     print("--------------------------------------------------")
 
 def opcion_menu():
@@ -58,9 +64,11 @@ def opcion_menu():
     print("  2. Mostrar mi muro")
     print("  3. Mostrar los datos de perfil")
     print("  4. Actualizar el perfil de usuario")
+    print("  5. Agregar un Nuevo Amigo")
+    print("  6. Mostrar muro de un Amigo")
     print("  0. Salir")
     opcion = int(input("Ingresa una opción: "))
-    while opcion < 0 or opcion > 5:
+    while opcion < 0 or opcion > 7:
         print("No conozco la opción que has ingresado. Inténtalo otra vez.")
         opcion = int(input("Ingresa una opción: "))
     return opcion
@@ -119,6 +127,8 @@ def leer_usuario(nombre):
     #Una vez que hemos leido los datos del usuario no debemos olvidar cerrar el archivo
     archivo_usuario.close()
     return(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos, estado, muro)
+
+
 
 def escribir_usuario(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos, estado, muro):
     archivo_usuario = open(nombre+".user","w")
