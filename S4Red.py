@@ -1,4 +1,4 @@
-#El módulo 'os' nos permitirá consultar si un archivo existe.
+#El módulo 'os' nos permitirá consultar si un archivo existee.
 import os
 
 def mostrar_bienvenida():

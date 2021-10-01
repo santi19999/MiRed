@@ -3,7 +3,7 @@
 #a nuestra red social, y que nos hacía falta: administrar listas de amigos y de mensajes
 
 #Hemos agregado dos valores nuevos para el perfil del usuario: una lista de amigos, y una lista de mensajes
-#que llamaremos "muro"
+#que llamaremos "muro"s
 
 #La lista de mensajes reemplazará a nuestro antiguo valor "num_amigos". Al conocer la lista de amigos,
 #también conoceremos la cantidad de amigos. Observa cómo leemos la lista de amigos en la función
